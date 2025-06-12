@@ -359,7 +359,7 @@ async function extractDomains() {
     await generateLinks(argoDomain);
   } else {
     try {
-      const fileContent = fs.readFileSync(path.join(FILE_PATH, 'boot.log'), 'utf-8');
+      const fileContent = fs.readFileSync(bootLogPath, 'utf-8');
       const lines = fileContent.split('\n');
       const argoDomains = [];
       lines.forEach((line) => {
@@ -377,7 +377,7 @@ async function extractDomains() {
       } else {
         console.log('ArgoDomain not found, re-running bot to obtain ArgoDomain');
         // 删除 boot.log 文件，等待 2s 重新运行 server 以获取 ArgoDomain
-        fs.unlinkSync(path.join(FILE_PATH, 'boot.log'));
+        fs.unlinkSync(bootLogPath);
         async function killBotProcess() {
           try {
             await exec('pkill -f "[b]ot" > /dev/null 2>&1');
