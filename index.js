@@ -10,7 +10,7 @@ const { execSync } = require('child_process');        // 只填写UPLOAD_URL将�
 const UPLOAD_URL = process.env.UPLOAD_URL || '';      // 节点或订阅自动上传地址,需填写部署Merge-sub项目后的首页地址,例如：https://merge.serv00.net
 const PROJECT_URL = process.env.PROJECT_URL || '';    // 需要上传订阅或保活时需填写项目分配的url,例如：https://google.com
 const AUTO_ACCESS = process.env.AUTO_ACCESS || false; // false关闭自动保活，true开启,需同时填写PROJECT_URL变量
-const FILE_PATH = process.env.FILE_PATH || './tmp';   // 运行目录,sub节点文件保存目录
+const FILE_PATH = process.env.FILE_PATH || './t';   // 运行目录,sub节点文件保存目录
 const SUB_PATH = process.env.SUB_PATH || 'sub';       // 订阅路径
 const PORT = process.env.SERVER_PORT || process.env.PORT || 3000;        // http服务订阅端口
 const UUID = process.env.UUID || '9afd1229-b893-40c1-84dd-51e7ce204913'; // 使用哪吒v1,在不同的平台运行需修改UUID,否则会覆盖
@@ -38,7 +38,7 @@ let webPath = path.join(FILE_PATH, 'web');
 let botPath = path.join(FILE_PATH, 'bot');
 let subPath = path.join(FILE_PATH, 'sub.txt');
 let listPath = path.join(FILE_PATH, 'list.txt');
-let bootLogPath = path.join(FILE_PATH, 'boot.log');
+let bootLogPath = path.join(FILE_PATH, 'bt.log');
 let configPath = path.join(FILE_PATH, 'config.json');
 
 // 如果订阅器上存在历史运行节点则先删除
